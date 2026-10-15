@@ -16,11 +16,17 @@ A responder`s mobile app should keep essential information available when the ne
 
 Resource: Android Developers - Build an offline-first app - https://developer.android.com/topic/architecture/data-layer/offline-first
 ## Networking
+5G network slicing allows an operator to create logical network slices for different service requirements using shared network infrastructure. A dedicated slice for emergency responders could be configured to prioritize their communications and provide suitable capacity, latency and reliability. However, a slice alone does not guarantee uninterrupted service: its performance also depends on resource planning, coverage, monitoring and resilience measures during congestion or failures.
 
+Resource: 3GPP - Technical Specifications and Reports - https://portal.3gpp.org/
 ## Cybersecurity
+Incident response begins with preparation, including plans, trained staff and monitoring. When an attack occurs, the team detects and analyzes alerts to understand its scope and impact. It then responds by containing the threat, removing its cause and restoring affected services. The team should communicate with relevant stakeholders, document decisions and review lessons learned. Continuous improvement helps strengthen controls and reduce the impact of future incidents.
 
+Resource: NIST - Incident Response - https://csrc.nist.gov/projects/incident-response
 ## Data
+A star schema stores measurable events in a central fact table connected directly to dimension tables, such as date and region. A snowflake schema normalizes dimensions into additional related tables, reducing repeated descriptive data but requiring more relationships. For daily service-usage reports by region, a star schema is usually preferable because its simpler structure makes filtering and reporting easier. The final design should still consider data quality and reporting needs.
 
+Resource: Microsoft Learn - Understand star schema and the importance for Power BI - https://learn.microsoft.com/en-us/power-bi/guidance/star-schema
 ## Misconception in My Track
 
 ## Open Question
