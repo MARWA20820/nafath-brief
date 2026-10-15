@@ -2,7 +2,7 @@ Version: NAFATH-V2
 Track: Software
 
 ## Overview
-A reliable 5G emergency service depends on six connected IT fields. Artificial intelligence can help predict network congestion, provided models are evaluated carefully to avoid overfitting. Network slicing can help reserve suitable network resources for emergency communications. Together, these capabilities improve service continuity, operational visibility and response readiness. For software reliability, the operator must understand safe and idempotent HTTP methods so automatic retries do not duplicate actions.
+A reliable 5G emergency service depends on six connected IT fields working together. Software design determines how requests behave when clients retry after failures, helping prevent duplicate actions. Artificial intelligence can help predict network congestion, but models must be evaluated carefully to avoid overfitting and unreliable predictions. Mobile applications should keep essential information available offline and synchronize changes safely when connectivity returns. Network slicing can help allocate network resources for emergency communications, although it does not remove the need for coverage, monitoring and resilience. Cybersecurity incident response helps teams detect, contain and recover from attacks. Data architecture supports accurate reports about service usage by region and day. For software reliability, understanding safe and idempotent HTTP methods is essential to making automatic retries safer and avoiding duplicate actions.
 ## Software
 HTTP methods differ in whether they are safe and idempotent. GET, HEAD, OPTIONS and TRACE are safe because they are intended to read information without requesting a state change. PUT and DELETE are idempotent, meaning repeating the same request has the same intended effect as doing it once. This matters during automatic retries: a client can retry an idempotent request after a connection failure more safely, while retrying POST may duplicate an action.
 
@@ -12,13 +12,13 @@ Overfitting occurs when a model learns details or noise in its training data ins
 
 Resource: Google for Developers - Overfitting - https://developers.google.com/machine-learning/crash-course/overfitting/overfitting
 ## Mobile
-A responder`s mobile app should keep essential information available when the network is unavailable. It should store necessary data locally and clearly indicate when information may be out of date.User actions made offline can be queued for synchronization when connectivity returns. The app should then reconcile local and server data, handle conflicting updates safely, and report failed synchronization so responders do not assume that critical information has been delivered.
+A responder`s mobile app should keep essential information available when the network is unavailable. It should store necessary data locally and clearly indicate when information may be out of date. User actions made offline can be queued for synchronization when connectivity returns. The app should then reconcile local and server data, handle conflicting updates safely, and report failed synchronization, so responders do not assume that critical information has been delivered.
 
 Resource: Android Developers - Build an offline-first app - https://developer.android.com/topic/architecture/data-layer/offline-first
 ## Networking
 5G network slicing allows an operator to create logical network slices for different service requirements using shared network infrastructure. A dedicated slice for emergency responders could be configured to prioritize their communications and provide suitable capacity, latency and reliability. However, a slice alone does not guarantee uninterrupted service: its performance also depends on resource planning, coverage, monitoring and resilience measures during congestion or failures.
 
-Resource: 3GPP - Technical Specifications and Reports - https://portal.3gpp.org/
+Resource: Ericsson - 5G RAN Solutions  - https://www.ericsson.com/en/ran/solutions
 ## Cybersecurity
 Incident response begins with preparation, including plans, trained staff and monitoring. When an attack occurs, the team detects and analyzes alerts to understand its scope and impact. It then responds by containing the threat, removing its cause and restoring affected services. The team should communicate with relevant stakeholders, document decisions and review lessons learned. Continuous improvement helps strengthen controls and reduce the impact of future incidents.
 
