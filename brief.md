@@ -28,5 +28,10 @@ A star schema stores measurable events in a central fact table connected directl
 
 Resource: Microsoft Learn - Understand star schema and the importance for Power BI - https://learn.microsoft.com/en-us/power-bi/guidance/star-schema
 ## Misconception in My Track
+A common misconception is that every failed HTTP request can be retried safely because the client did not receive a response. In reality, the server may have completed the operation before the connection failed. RFC 9110 explains that idempotent requests can be repeated with the same intended effect, while clients should not automatically retry non-idempotent requests unless they know the original request was not applied or the operation is otherwise safe. In an emergency service, carefully designed retry logic helps prevent duplicate incident reports or actions.
 
+Evidence: RFC 9110, Section 9.2.2, “Idempotent Methods.”
+
+Resource: RFC 9110 - HTTP Semantics - https://www.rfc-editor.org/rfc/rfc9110.html
 ## Open Question
+How can an emergency-service API prevent duplicate incident reports when network failures trigger automatic retries?
